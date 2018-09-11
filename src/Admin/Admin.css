@@ -1,0 +1,83 @@
+/*
+style="background-color: #0f549f;"
+style="width:100%; font-size:15px; text-align: center;"
+*/
+
+#brand-logo{
+    width: 150px;
+    margin-left: 10px; 
+}
+
+h1{
+    text-align: center;
+}
+
+.card{
+    text-align: center;
+    margin: 5px;
+    align-items: center;
+}
+
+footer {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    color: #3c3c3c;
+    background: #3c3c3c;
+    padding-top: 20px;
+}
+
+.suscribe-button{
+    border: none;
+}
+
+.suscribe-button:hover{
+    background-color: #db9635;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+    color: #fff;
+    background-color: #4b7bab;
+}
+
+a{
+    color: #4b7bab;
+}
+
+a:hover{
+    color: #4b7bab;
+}
+
+P{
+    color:    #e28d14;
+    font-weight: bolder;
+}
+
+
+@media (min-width: 768px) and (max-width: 1440px){
+    h1{
+        text-align: left;
+    }
+    .flex-column {
+        text-align: center;
+    }
+
+    .card{
+        width: 18rem;
+        padding: 10px;
+        margin: 10px;
+        float: left;
+    }
+}
+@media (min-width: 768px) and (max-width: 991.98px) { 
+    h1{
+        text-align: center;
+}
+
+.card{
+    width: 15rem;
+    margin-left: 80px;
+    float: left;
+    }
+}

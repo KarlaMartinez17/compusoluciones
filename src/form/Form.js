@@ -1,20 +1,19 @@
 import React, { Component } from 'react';
 import FormRow from './FormRow';
 import './Form.css';
+import User from '..//User/User.js';
 // import axios from 'axios';
 
 class Form extends Component {
 
-    constructor() {
-        super();
-
+    constructor(props) {
+        super(props);
         this.state = {
-             user:''
+            user:''
         }
 
         this.onSubmit = this.onSubmit.bind(this);
     }
-
 
     onSubmit(e) {
         e.preventDefault();
@@ -29,12 +28,20 @@ class Form extends Component {
             });
     
             var xhr = new XMLHttpRequest();
-           
+
     
             xhr.addEventListener("readystatechange", function () {
                 if (this.readyState === 4) {
                     var respo = JSON.parse(this.response);
                     console.log(respo.AccessToken);
+                    var access = respo.TipoAcceso; 
+
+                    if (access === "Administrador"){
+                        alert("exitoso")
+                    } else if (access === "Suscriptor"){
+                        alert('¿Qué pasa?');
+
+                    }
                     
                 }
             });
@@ -55,11 +62,9 @@ class Form extends Component {
         return (
 
             <div className="Form" >
-
-
                 <form className="Form-body"
-                    onSubmit={this.onSubmit} >
-                    <h2 className="Form-title" > REGISTRO </h2>
+                    onSubmit={(ev) => this.onSubmit.bind(this)(ev, this.props.handleLogin)} >
+                    <h2 className="Form-title" > Iniciar sesión </h2>
 
                     <FormRow inputType="email"
                         labelText="Email"
@@ -71,7 +76,7 @@ class Form extends Component {
                         isRequired={true}
                         ref="password" />
 
-                    < button className="Form-button"> Registro </button>
+                    <button className="Form-button"> Registro </button>
                     <label className="Form-labelLegend" > </label>
                 </form>
             </div>
