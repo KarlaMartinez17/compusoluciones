@@ -24,6 +24,7 @@ class User extends Component {
                         aria-controls="v-pills-home" aria-selected="true">Planes</a>
                     <a className="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab"
                         aria-controls="v-pills-profile" aria-selected="false">Suscripciones</a>
+                        <button id="hide-button" className="btn btn-light text-white">boton escondido</button>
                     <button className="btn btn-secondary">Cerrar Sesión</button>
                 </div>
             </div>

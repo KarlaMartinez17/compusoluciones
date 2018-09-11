@@ -4,6 +4,16 @@ style=" width:500px"
 style="width:100%; font-size:15px; text-align: center;"
 */
 
+#hide-button{
+    background-color: transparent;
+    border:none;
+}
+
+#hide-button:hover{
+    background-color: transparent;
+    border: none;
+}
+
 #brand-logo{
     width: 150px;
     margin-left: 10px; 
