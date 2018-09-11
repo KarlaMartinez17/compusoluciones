@@ -11,7 +11,7 @@ class User extends Component {
         return(
             <div>
         <nav className="navbar navbar-light justify-content-end" >
-        <img className="p-2 bd-highlight" id="brand-logo" src="whitecompusol.png" alt="" />
+        <img className="p-2 bd-highlight" id="brand-logo" src={"assets/images/whitecompusol.png"} alt="" />
     </nav>
     <br/>
     <div className="container-fluid">
@@ -60,24 +60,86 @@ class User extends Component {
                             </div>
                         </div>
                     </div>
-                    <div className="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                        <div className="modal-dialog modal-lg" role="document">
-                            <div className="modal-content">
-                                <div className="modal-header">
-                                    <h5 className="modal-title" id="exampleModalLabel">Modal title</h5>
-                                    <button type="button" className="close" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
+
+
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-notify modal-warning" role="document">
+            <div class="modal-content">
+                <div class="modal-header text-justify>">
+                    <h4 class="modal-title white-text w-100 font-weight-bold py-2">Tarjeta de crédito o débito</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true" class="white-text">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form action="#" method="POST" id="payment-form">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <h6>Tarjetas de crédito</h6>
+                                    <img src={"assets/images/cards1.png"} alt="credit cards" />
                                 </div>
-                                <div className="modal-body">
-                                </div>
-                                <div className="modal-footer">
-                                    <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
-                                    <button type="button" className="btn btn-primary">Save changes</button>
+                                <div class="col-sm-8">
+                                    <h6>Tarjetas de débito</h6>
+                                    <img src={"assets/images/cards2.png"} alt="debit cards" />
                                 </div>
                             </div>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <label>Nombre del titular</label>
+                                </div>
+                                <div class="col-sm-6">
+                                    <label>Número de tarjeta</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <input class="form-control input-lg" type="text" placeholder="Como aparece en la tarjeta" autocomplete="off"
+                                        data-openpay-card="holder_name" />
+                                </div>
+                                <div class="col-sm-6">
+                                    <input class="form-control input-lg" type="text" autocomplete="off" data-openpay-card="card_number" />
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <label>Fecha de expiración</label>
+                                </div>
+                                <div class="col-sm-6">
+                                    <label>Código de seguridad</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="form-inline">
+                                        <input type="text" placeholder="Mes" data-openpay-card="expiration_month" />
+                                        <input type="text" placeholder="Año" data-openpay-card="expiration_year" />
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <input type="text" placeholder="3 dígitos" autocomplete="off" data-openpay-card="cvv2" />
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <p>Transacciones realizadas vía:</p>
+                                    <img src={"assets/images/openpay.png"} alt="openPay" />
+                                </div>
+                                <div class="col-sm-5">
+                                    <p><img src={"assets/images/security.png"} alt="security" />Tus pagos se realizan de forma segura con encriptación de 256 bits</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <button type="button" class="btn btn-light-green">PAGAR</button>
+                            </div>
                         </div>
-                    </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
                     <div className="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
                         <h1>Suscripciones</h1>
                         <hr/>

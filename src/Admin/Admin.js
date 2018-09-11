@@ -11,7 +11,7 @@ class Admin extends Component {
         return(
             <div>
     <nav class="navbar navbar-light justify-content-end">
-        <img class="p-2 bd-highlight" id="brand-logo" src={"./whitecompusol.png"} alt=""/>
+        <img class="p-2 bd-highlight" id="brand-logo" src={"assets/images/whitecompusol.png"} alt=""/>
     </nav>
     <br/>
     <div class="container-fluid">
