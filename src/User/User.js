@@ -60,117 +60,112 @@ class User extends Component {
                             </div>
                         </div>
                     </div>
-
-
-        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg modal-notify modal-warning" role="document">
-            <div class="modal-content">
-                <div class="modal-header text-justify>">
-                    <h4 class="modal-title white-text w-100 font-weight-bold py-2">Tarjeta de crédito o débito</h4>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true" class="white-text">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <form action="#" method="POST" id="payment-form">
-                        <div class="container-fluid">
-                            <div class="row">
-                                <div class="col-sm-4">
-                                    <h6>Tarjetas de crédito</h6>
-                                    <img src={"assets/images/cards1.png"} alt="credit cards" />
-                                </div>
-                                <div class="col-sm-8">
-                                    <h6>Tarjetas de débito</h6>
-                                    <img src={"assets/images/cards2.png"} alt="debit cards" />
-                                </div>
+                    <div className="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div className="modal-dialog modal-lg modal-notify modal-warning" role="document">
+                        <div className="modal-content">
+                            <div className="modal-header text-justify>">
+                                <h4 className="modal-title white-text w-100 font-weight-bold py-2">Tarjeta de crédito o débito</h4>
+                                <button type="button" className="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true" className="white-text">&times;</span>
+                                </button>
                             </div>
-                            <div class="row">
-                                <div class="col-sm-6">
-                                    <label>Nombre del titular</label>
-                                </div>
-                                <div class="col-sm-6">
-                                    <label>Número de tarjeta</label>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-sm-6">
-                                    <input class="form-control input-lg" type="text" placeholder="Como aparece en la tarjeta" autocomplete="off"
-                                        data-openpay-card="holder_name" />
-                                </div>
-                                <div class="col-sm-6">
-                                    <input class="form-control input-lg" type="text" autocomplete="off" data-openpay-card="card_number" />
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-sm-6">
-                                    <label>Fecha de expiración</label>
-                                </div>
-                                <div class="col-sm-6">
-                                    <label>Código de seguridad</label>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-sm-6">
-                                    <div class="form-inline">
-                                        <input type="text" placeholder="Mes" data-openpay-card="expiration_month" />
-                                        <input type="text" placeholder="Año" data-openpay-card="expiration_year" />
+                            <div className="modal-body">
+                                <form action="#" method="POST" id="payment-form">
+                                        <div className="container-fluid">
+                                                <div className="row">
+                                                    <div className="col-sm-4">
+                                                        <h6>Tarjetas de crédito</h6>
+                                                        <img src={"assets/images/cards1.png"} alt="credit cards" />
+                                                    </div>
+                                                    <div className="col-sm-8">
+                                                        <h6>Tarjetas de débito</h6>
+                                                        <img src={"assets/images/cards2.png"} alt="debit cards" />
+                                                    </div>
+                                                    </div>
+                                                        <div className="row">
+                                                            <div className="col-sm-6">
+                                                                <label>Nombre del titular</label>
+                                                            </div>
+                                                            <div className="col-sm-6">
+                                                                <label>Número de tarjeta</label>
+                                                            </div>
+                                                                </div>
+                                                        <div className="row">
+                                                            <div className="col-sm-6">
+                                                                <input className="form-control input-lg" type="text" placeholder="Como aparece en la tarjeta" autocomplete="off" data-openpay-card="holder_name" />
+                                                            </div>
+                                                            <div className="col-sm-6">
+                                                                <input className="form-control input-lg" type="text" autocomplete="off" data-openpay-card="card_number" />
+                                                            </div>
+                                                        </div>
+                                                        <div className="row">
+                                                            <div className="col-sm-6">
+                                                                <label>Fecha de expiración</label>
+                                                            </div>
+                                                            <div className="col-sm-6">
+                                                                <label>Código de seguridad</label>
+                                                            </div>
+                                                        </div>
+                                                        <div className="row">
+                                                            <div className="col-sm-6">
+                                                                <div className="form-inline">
+                                                                    <input type="text" placeholder="Mes" data-openpay-card="expiration_month" />
+                                                                    <input type="text" placeholder="Año" data-openpay-card="expiration_year" />
+                                                                </div>
+                                                            </div>
+                                                            <div className="col-sm-6">
+                                                                <input type="text" placeholder="3 dígitos" autocomplete="off" data-openpay-card="cvv2" />
+                                                            </div>
+                                                        </div>
+                                                        <div className="row">
+                                                            <div className="col-sm-4">
+                                                                <p>Transacciones realizadas vía:</p>
+                                                                <img src={"assets/images/openpay.png"} alt="openPay" />
+                                                            </div>
+                                                            <div className="col-sm-5">
+                                                                <p><img src={"assets/images/security.png"} alt="security" />Tus pagos se realizan de forma segura con encriptación de 256 bits</p>
+                                                            </div>
+                                                        </div>
+                                                            <div className="row">
+                                                                <button type="button" className="btn btn-light-green">PAGAR</button>
+                                                            </div>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+                                        <h1>Suscripciones</h1>
+                                        <hr/>
+                                        <br/>
+                                        <br/>
+                                    <div className="suscription-card shadow-lg p-3 mb-5 bg-white rounded" >
+                                        <div className="card-body">
+                                            <h3 className="card-title">Suscripción</h3>
+                                                <h4 className="card-text">ID: 1234567890</h4>
+                                                <h4 className="card-text">PLAN: 3 Meses</h4>
+                                                <h4 className="card-text">Fecha de cobro: 15/09/2018</h4>
+                                                <h4 className="card-text">Fecha de creación: 10/06/2016</h4>
+                                                <br/>
+                                                <button className="btn btn-danger">Cancelar Suscripción <i className="far fa-trash-alt"></i></button>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="col-sm-6">
-                                    <input type="text" placeholder="3 dígitos" autocomplete="off" data-openpay-card="cvv2" />
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-sm-4">
-                                    <p>Transacciones realizadas vía:</p>
-                                    <img src={"assets/images/openpay.png"} alt="openPay" />
-                                </div>
-                                <div class="col-sm-5">
-                                    <p><img src={"assets/images/security.png"} alt="security" />Tus pagos se realizan de forma segura con encriptación de 256 bits</p>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <button type="button" class="btn btn-light-green">PAGAR</button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-                    <div className="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
-                        <h1>Suscripciones</h1>
-                        <hr/>
-                        <br/>
-                        <br/>
-                        <div className="suscription-card shadow-lg p-3 mb-5 bg-white rounded" >
-                            <div className="card-body">
-                                <h3 className="card-title">Suscripción</h3>
-                                    <h4 className="card-text">ID: 1234567890</h4>
-                                    <h4 className="card-text">PLAN: 3 Meses</h4>
-                                    <h4 className="card-text">Fecha de cobro: 15/09/2018</h4>
-                                    <h4 className="card-text">Fecha de creación: 10/06/2016</h4>
-                                    <br/>
-                                    <button className="btn btn-danger">Cancelar Suscripción <i className="far fa-trash-alt"></i></button>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
-    <footer className="container-fluid">
-        <div className="row">
-            <div className="col-xs-8 col-sm-12 col-md-12 col-lg-12">
-                <p className="textFooter text-white-50">Todos los derechos reservados CompuSoluciones 2018.</p>
-            </div>
-        </div>
-    </footer>
-            </div>
-        )
-    }
+                <footer className="container-fluid">
+                    <div className="row">
+                        <div className="col-xs-8 col-sm-12 col-md-12 col-lg-12">
+                            <p className="textFooter text-white-50">Todos los derechos reservados CompuSoluciones 2018.</p>
+                        </div>
+                    </div>
+                </footer>
+                </div>
+            )
+        }
 
 }
 
