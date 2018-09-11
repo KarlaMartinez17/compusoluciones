@@ -1,13 +1,17 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat');
 @import url('https://fonts.googleapis.com/css?family=Lato');
+.navbar{
+    width: 100%;
+    background-color: #0f549f;
+}
 .Form {
     width: 100%;
-    height: 100vh;
+    height: 89.5vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background: #4A7BAB;
+    background: rgba(226,226,226,1);
 }
 .Form-body {
     background: #BDBDBD;
@@ -22,8 +26,8 @@
 .FormRow {
     display: flex;
     flex-direction: column;
-    margin-top: 4%;
-    margin-bottom: 4%;
+    margin-top: 4%; 
+    margin-bottom: 4%; 
 }
 .FormRow-label,
 .FormRow-input,
@@ -35,13 +39,12 @@
     font-size: 1em;
 }
 .Form-button {
-    background: #ffffff;
-    border: 1px solid #F5F5F5;
     border-radius: 5px;
     padding: 4px 16px 5px 16px;
     cursor: pointer;
     font-size: 0.9em;
     display: block;
-    margin: 0 auto;
+    margin:  auto;
+    margin-top: 15px;
     margin-bottom: 15px;
 }

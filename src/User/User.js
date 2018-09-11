@@ -1,10 +1,25 @@
 import React, { Component } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './User.css';
+//import $ from 'jquery';
+//import OpenPay from './/openpay.v1.js';
 
 class User extends Component {
     constructor(){
         super();
+    }
+
+    componentDidMount(){
+
+        // OpenPay.setId('miuvrjojulgnqqak0smx');
+        // OpenPay.setApiKey('pk_6ed4884b2ada4537b5eab9109b2f69d8');
+        // OpenPay.setSandboxMode(true);
+    
+    
+            // this.clickBtn = this.clickBtn.bind(this);
+            // this.success_callbak = this.success_callbak.bind(this);
+            // this.error_callbak = this.error_callbak.bind(this);
+    
     }
 
     render() {
@@ -168,5 +183,29 @@ class User extends Component {
         }
 
 }
+
+/*
+function clickBtn(event) {
+    event.preventDefault()
+    $("#pay-button").prop( "disabled", true);
+    OpenPay.token.extractFormAndCreate('payment-form', success_callbak, error_callbak);
+    console.log('entró en click');
+}
+
+function success_callbak(response) {
+    var token_id = response.data.id;
+    $('#token_id').val(token_id);
+    $('#payment-form').submit();
+    console.log('llamar success');
+}
+
+function error_callbak(response) {
+    var desc = response.data.description != undefined ?
+    response.data.description : response.message;
+    alert("ERROR [" + response.status + "] " + desc);
+    $("#pay-button").prop("disabled", false);
+    console.log('error response);
+}
+*/
 
 export default User;
