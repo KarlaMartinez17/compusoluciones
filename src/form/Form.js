@@ -1,95 +1,113 @@
 import React, { Component } from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import FormRow from './FormRow';
 import './Form.css';
-import User from '..//User/User.js';
-// import axios from 'axios';
+import Admin from '../Admin/Admin.js';
+import User from '../User/User.js';
+
 
 class Form extends Component {
 
     constructor(props) {
         super(props);
+
         this.state = {
-            user: ''
+            user: '',
+            administrador: false,
+            logged: false,
+            password: '',
+            rLogin: true,
+
         }
 
-        this.onSubmit = this.onSubmit.bind(this);
+        
+        this.onHandleSubmit = this.onHandleSubmit.bind(this);
+        this.onHandleChange = this.onHandleChange.bind(this);
     }
 
-    onSubmit(e) {
+
+    onHandleSubmit(e) {
         e.preventDefault();
-        let email = this.refs.email.getValue();
-        let password = this.refs.password.getValue();
-        console.log(email);
-        console.log(password);
+        console.log('this.state', this.state);
+        var reqHeaders = new Headers();
+        reqHeaders.append('Content-Type', 'application/json');
+        var reqInit = {
+            method: 'POST',
+            headers: reqHeaders,
+            body:  JSON.stringify({
+                "usuario": this.state.user,
+                "contrasena": this.state.password,
+            })
+        };
 
-        var data = JSON.stringify({
-            "usuario": email,
-            "contrasena": password
+        const req = new Request('https://ws.compusoluciones.com/RetoTalentFest/ComercioAPI/Accesos', reqInit);
+
+        fetch(req).then((response) => {
+
+            return response.json();
+
+        })
+        .then(response => {
+            const { TipoAcceso, AccessToken } = response
+            this.setState({ TipoAcceso, AccessToken, rLogin: false });
+            console.log(response);
         });
-
-        var xhr = new XMLHttpRequest();
-
-
-        xhr.addEventListener("readystatechange", function () {
-            if (this.readyState === 4) {
-                var respo = JSON.parse(this.response);
-                console.log(respo.AccessToken);
-                var access = respo.TipoAcceso;
-
-                if (access === "Administrador") {
-                    alert("exitoso")
-                } else if (access === "Suscriptor") {
-                    alert('¿Qué pasa?');
-
-                }
-
-            }
-        });
-
-        xhr.open("POST", "https://ws.compusoluciones.com/RetoTalentFest/ComercioAPI/Accesos");
-        xhr.setRequestHeader("Content-Type", "application/json");
-        xhr.setRequestHeader("Authorization", "AccessToken");
-        xhr.setRequestHeader("Cache-Control", "no-cache");
-        xhr.setRequestHeader("Postman-Token", "48902808-941c-487a-b1a6-4a24ca1f50ad");
-
-        xhr.send(data)
-
-        // console.log("hola"+ data);
 
     }
+
+    onHandleChange(e) {
+        let email = this.refs.email.value;
+        let password = this.refs.password.value;
+        this.setState({user: email, password: password});
+
+    }
+
+    handleLoginClick = () => {
+        const {rLogin} = this.state;
+        this.setState({rLogin: !rLogin})
+    }
+
+    renderLogin = () => (
+        <div classNAme="form-body">
+                <nav className="navbar navbar-light justify-content-end">
+                    <img className="p-2 bd-highlight" id="brand-logo" src={"assets/images/whitecompusol.png"} alt=""/>
+                </nav>
+
+        <div className="Form" >
+            <form className="Form-body" onSubmit={this.onHandleSubmit} >
+                <h2 className="Form-title" > Iniciar sesión </h2>
+                <label >Email</label>
+                <input className="input1" type="email"
+                    name="email"
+                    required
+                    onChange={this.onHandleChange}
+                    ref="email"
+                    value={this.state.user} />
+                <label >Password</label>
+                <input className="input1" type="password"
+                    name="password"
+                    required
+                    onChange={this.onHandleChange}
+                    value={this.state.password}
+                    ref="password" />
+                < button className="Form-button btn  btn-primary"> Log In </button>
+                <label className="Form-labelLegend" > </label>
+            </form>
+        </div>
+    </div>    
+    )
 
     render() {
+        const { rLogin } = this.state;
+        const cond = this.state.TipoAcceso === "Suscriptor";
         return (
+            <div>
+                {
+                    rLogin ? this.renderLogin() : cond ? <User /> : <Admin />
+                }
+            </div>
 
-            <div className = "form-body">
-            <nav className="navbar navbar-light justify-content-end">
-                <img className="p-2 bd-highlight" id="brand-logo" src={"assets/images/whitecompusol.png"} alt=""/>
-            </nav>
-            
-            <div className="Form">      
-                    <form className="Form-body shadow-lg p-3 mb-5 bg-white rounded"
-                        onSubmit={(ev) => this.onSubmit.bind(this)(ev, this.props.handleLogin)} >
-                        <h2 className="Form-title" > Iniciar sesión </h2>
+        );
+    }
 
-                        <FormRow inputType="email"
-                            labelText="Email"
-                            isRequired={true}
-                            ref="email" />
+}
 
-                        <FormRow inputType="password"
-                            labelText="Password"
-                            isRequired={true}
-                            ref="password" />
-
-                        <button type="button" className="Form-button btn btn-primary"> Registro </button>
-                        <label className="Form-labelLegend" > </label>
-                    </form>
-                </div>
-                </div>
-                );
-            }
-        
-        }
-                            
 export default Form;

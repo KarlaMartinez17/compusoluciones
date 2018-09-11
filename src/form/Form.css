@@ -23,19 +23,19 @@
     font-size: 2em;
     font-family: 'Montserrat', sans-serif;
 }
-.FormRow {
+.input1 {
     display: flex;
     flex-direction: column;
     margin-top: 4%; 
     margin-bottom: 4%; 
 }
-.FormRow-label,
-.FormRow-input,
+.input1-label,
+.input1-input,
 .Form-button,
 .Form-labelLegend {
     font-family: 'Lato', sans-serif;
 }
-.FormRow-input {
+.input1-input {
     font-size: 1em;
 }
 .Form-button {

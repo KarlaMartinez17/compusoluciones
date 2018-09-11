@@ -9,8 +9,6 @@ class App extends Component {
     return (
       <div className="App">
         <Form />
-        <User />
-        <Admin />
       </div>
     );
   }
